@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Widget
 
-## Available Scripts
+Create a weather widget for use in the webbrowser that provides us with a weather forecast.
 
-In the project directory, you can run:
+We've included an 'icons' folder for your use.
 
-### `yarn start`
+We recommend using the free DarkSky [weather API](https://darksky.net/dev).
+You can register a free account which will allow for up to a thousand requests per day.
+Note; the DarkSky API does not provide CORS headers, you will need to either use a public [CORS anywhere](https://cors-anywhere.herokuapp.com/) service (see also: [link](https://www.karolisram.com/cors-from-anywhere/)), or [include your own](https://www.npmjs.com/package/cors-anywhere) within the project
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Things to consider:**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* We recommend that you use a framework (ie: Angular, React, VueJS)
+* You should be able to explain the reasoning behind your choices
 
-### `yarn test`
+## Assessment
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For the assessment of this test we will review all aspects of the work delivered.
+The assignment is intentionally left vague such as to enable you to show yourself from your best side.
+You can score points with anything/everything, so long as it is done well.
 
-### `yarn build`
+Below follows a list of things that can score you points. This list is of course not exhaustive.
+You are *not* expected to include all or even most of the points below in your assignment.
+Choose a number of things from the list and invest your time wisely.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* Code quality
+  * Coding standards
+  * Extensibility
+  * Structure
+  * Abstraction
+  * Readability
+  * Comments
+  * Function / Variable / Class names
+  * Error handling
+* Automated tests
+  * Unit tests
+  * End to end tests
+  * Good test-coverage
+* Documentation
+* Visually attractive results
+* Usability
+  * How much information do you provide?
+  * How easy is it to read what's important?
+* Accessibility
+  * Visual impairment
+  * Screen readers
+  * Navigation
+* Production-readiness
+  * Browser support
+  * Load speed (First meaningful paint, first contentful paint, interaction ready)
+* Technology-used (Examples:)
+  * Code splitting
+  * Lazy loading
+  * ES6
+  * Typescript
+  * D3
+  * PWA
+* SEO
