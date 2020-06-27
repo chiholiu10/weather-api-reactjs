@@ -4,8 +4,8 @@ import axios from 'axios';
 
 const Search = () => {
     let input;
-    // const [ data, setData ] = useState([]);
-    // const [ formatAddress, setFormatAddress ] = useState({});
+    const [ data, setData ] = useState([]);
+    const [ formatAddress, setFormatAddress ] = useState({});
     const apiKey = "e8780420f8d0a3cf13e80ff3ad27cf96";
     const defaultPlace = "Amsterdam";
 
@@ -29,6 +29,7 @@ const Search = () => {
             response => {
                 const { lat, lng } = response.results[0].geometry.location;
                 const city = response.results[0].formatted_address;
+                setFormatAddress(city);
                 passCoordination(lat, lng);
             },
             error => {
@@ -54,8 +55,7 @@ const Search = () => {
         console.log(getAPI) 
         axios(getAPI)
             .then(response => {
-                // setData(response.data);
-                console.log(response);
+                setData(response.data);
             })
             .catch(error => {
                 console.log('hello')
