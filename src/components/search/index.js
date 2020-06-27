@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Geocode from "react-geocode";
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { connect } from 'react-redux';
+import { 
+    cityName, 
+    passWeatherData 
+} from '../../actions/index';
 
 const Search = () => {
-    let input;
-    const [ data, setData ] = useState([]);
-    const [ formatAddress, setFormatAddress ] = useState({});
+    const dispatch = useDispatch();
     const apiKey = "e8780420f8d0a3cf13e80ff3ad27cf96";
     const defaultPlace = "Amsterdam";
+
+    let input;
 
     // get localposition
     Geocode.setApiKey("AIzaSyCgNsKGtrqTlN4uRXj6HbzR-drBWKqqHxA");
@@ -29,7 +35,7 @@ const Search = () => {
             response => {
                 const { lat, lng } = response.results[0].geometry.location;
                 const city = response.results[0].formatted_address;
-                setFormatAddress(city);
+                dispatch(cityName(city))
                 passCoordination(lat, lng);
             },
             error => {
@@ -45,17 +51,15 @@ const Search = () => {
     }
 
     const searchLocation = (lat, lon) => {
-        console.log(lat, lon);
         let weatherAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=metric&exclude={part}&appid=${apiKey}`;
         passWeatherAPI(weatherAPI);
-
     }
 
     const passWeatherAPI = (getAPI) => { 
         console.log(getAPI) 
         axios(getAPI)
             .then(response => {
-                setData(response.data);
+                dispatch(passWeatherData(response.data));
             })
             .catch(error => {
                 console.log('hello')
@@ -81,4 +85,11 @@ const Search = () => {
     )
 }
 
-export default Search;
+const mapStateToProps = (state) => {
+    console.log(state);
+    return {
+        state
+    }
+}
+
+export default connect(mapStateToProps, null)(Search);
