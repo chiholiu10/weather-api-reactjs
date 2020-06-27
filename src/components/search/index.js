@@ -10,7 +10,7 @@ const Search = () => {
     const defaultPlace = "Amsterdam";
 
     // get localposition
-    Geocode.setApiKey(aiKey);
+    Geocode.setApiKey(apiKey);
 
     const getSearchValue = (value) => {
         let currentLocation = value;
