@@ -1,13 +1,14 @@
 export const types = {
-    getInput: 'GET_INPUT',
-    outputResult: 'OUTPUT_RESULT',
-    cityNmae: 'CITY_NAME'
+    PASS_WEATHER_DATA: 'GET_INPUT',
+    OUTPUT_RESULT: 'OUTPUT_RESULT',
+    CITY_NAME: 'CITY_NAME'
 }
 
-export const getInput = (value) => {
+export const passWeatherData = (data) => {
+    console.log(data)
     return {
-        type: types.GET_INPUT,
-        value
+        type: types.PASS_WEATHER_DATA,
+        data
     }
 }
 
