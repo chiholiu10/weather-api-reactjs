@@ -12,7 +12,21 @@ export const weatherData = (state = initialState, action) => {
                 weatherInfo: action.value
             }
         }
+        case types.PASS_WEATHER_DATA: {
+            return {
+                ...state,
+                weatherInfo: action.data
+            }
+        }
+        case types.CITY_NAME: {
+            return {
+                ...state,
+                city: action.city
+            }
+        }
         default: 
             return state;
     }
 }
+
+
