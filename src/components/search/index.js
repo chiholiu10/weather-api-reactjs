@@ -6,7 +6,7 @@ const Search = () => {
     let input;
     const [ data, setData ] = useState([]);
     const [ formatAddress, setFormatAddress ] = useState({});
-    const apiKey = process.env.REACT_APP_API_KEY;
+    const apiKey = 'AIzaSyCgNsKGtrqTlN4uRXj6HbzR-drBWKqqHxA';
     const defaultPlace = "Amsterdam";
 
     // get localposition
