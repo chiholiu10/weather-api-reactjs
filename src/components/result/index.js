@@ -2,19 +2,20 @@ import React from "react";
 import { connect } from "react-redux";
 
 const Result = ({ city, data }) => {
-    if(data == undefined) {
+    if(data === undefined) {
         return (
             <div></div>
         )
     } else {
+        console.log(data)
         return (
             <div>
                 <div className="city-name">{city}</div>
                 <div className="weather-info">
-                    {data.temp}
-                    {data.weather[0].main}
-                    {data.weather[0].description}
-                    {data.weather[0].icon}
+                    <div className="temperature">{data.temp}</div>
+                    <div>{data.weather[0].main}</div>
+                    <div>{data.weather[0].description}</div>
+                    <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}/>
                 </div>
             </div>
         )
