@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.scss';
-import Search from './components/search/index';
-import Result from './components/result/index';
+import { AppComponent } from "./components/App/App";
 
 function App() {
   return (
-    <div className="App">
-      <Search/>
-      <Result/>
+    <div className="App" data-testid="app-component">
+      <AppComponent/>
     </div>
   );
 }

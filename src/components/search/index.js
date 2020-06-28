@@ -5,18 +5,19 @@ import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import { 
     cityName, 
-    passWeatherData 
+    passWeatherData,
+    clearArray
 } from '../../actions/index';
 
-const Search = () => {
+const Search = ({ data }) => {
     const dispatch = useDispatch();
-    const apiKey = "e8780420f8d0a3cf13e80ff3ad27cf96";
+    const apiKey = 'e8780420f8d0a3cf13e80ff3ad27cf96';
     const defaultPlace = "Amsterdam";
 
     let input;
 
     // get localposition
-    Geocode.setApiKey("AIzaSyCgNsKGtrqTlN4uRXj6HbzR-drBWKqqHxA");
+    Geocode.setApiKey("AIzaSyDTnFckTcPidqCa5F9dWom4H_0hbJu9Nh0");
 
     const getSearchValue = (value) => {
         let currentLocation = value;
@@ -25,7 +26,7 @@ const Search = () => {
     
     const checkLocation = (location) => {
         let getLocation = location;
-        getLocation.length === 0 ? getLocation = defaultPlace : getLocation = location;
+        getLocation.length == 0 ? getLocation = defaultPlace : getLocation = location;
         passLocation(getLocation)
     }
 
@@ -56,7 +57,6 @@ const Search = () => {
     }
 
     const passWeatherAPI = (getAPI) => { 
-        console.log(getAPI) 
         axios(getAPI)
             .then(response => {
                 dispatch(passWeatherData(response.data));
@@ -74,7 +74,13 @@ const Search = () => {
                 if(!input.value.trim()) {
                     return;
                 }
+
                 getSearchValue(input.value);
+
+                if(data !== undefined) {
+                    dispatch(clearArray());
+                }
+                
                 input.value = "";
             }}
             >
@@ -86,9 +92,8 @@ const Search = () => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-        state
+        data: state.weatherData.weatherInfo.current
     }
 }
 

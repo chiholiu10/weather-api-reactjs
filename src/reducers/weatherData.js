@@ -6,7 +6,7 @@ const initialState = {
 
 export const weatherData = (state = initialState, action) => {
     switch(action.type) {
-        case types.SUBMIT_INPUT: {
+        case types.CLEAR_ARRAY: {
             return {
                 ...state,
                 weatherInfo: []
