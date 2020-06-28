@@ -1,6 +1,7 @@
 import { types } from '../actions/index';
 
 const initialState = {
+    city: [],
     weatherInfo: []
 }
 
