@@ -1,6 +1,5 @@
 import React from "react";
 import { connect } from "react-redux";
-import LazyLoad from 'react-lazyload';
 
 const Result = ({ city, data }) => {
     if(data == undefined) {
