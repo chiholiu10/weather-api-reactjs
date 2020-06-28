@@ -7,7 +7,6 @@ const Result = ({ city, data }) => {
             <div></div>
         )
     } else {
-        console.log(data)
         return (
             <div>
                 <div className="city-name">{city}</div>
@@ -15,7 +14,7 @@ const Result = ({ city, data }) => {
                     <div className="temperature">{data.temp}</div>
                     <div>{data.weather[0].main}</div>
                     <div>{data.weather[0].description}</div>
-                    <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`}/>
+                    <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={city + ' weather status'}/>
                 </div>
             </div>
         )
