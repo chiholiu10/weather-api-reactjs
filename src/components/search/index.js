@@ -5,10 +5,11 @@ import { useDispatch } from 'react-redux';
 import { connect } from 'react-redux';
 import { 
     cityName, 
-    passWeatherData 
+    passWeatherData,
+    submitInput
 } from '../../actions/index';
 
-const Search = () => {
+const Search = ({ data }) => {
     const dispatch = useDispatch();
     const apiKey = "e8780420f8d0a3cf13e80ff3ad27cf96";
     const defaultPlace = "Amsterdam";
@@ -35,8 +36,8 @@ const Search = () => {
             response => {
                 const { lat, lng } = response.results[0].geometry.location;
                 const city = response.results[0].formatted_address;
-                dispatch(cityName(city))
                 passCoordination(lat, lng);
+                dispatch(cityName(city))
             },
             error => {
                 console.error(error)
@@ -67,7 +68,6 @@ const Search = () => {
     }
 
     return (
-
         <div>
             <form onSubmit={e => {
                 e.preventDefault()
@@ -75,6 +75,9 @@ const Search = () => {
                     return;
                 }
                 getSearchValue(input.value);
+                if(data !== undefined) {
+                    dispatch(submitInput())
+                }
                 input.value = "";
             }}
             >
@@ -86,9 +89,9 @@ const Search = () => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
-        state
+        city: state.weatherData.city,
+        data: state.weatherData.weatherInfo.current || undefined
     }
 }
 
