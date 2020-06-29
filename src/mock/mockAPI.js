@@ -1,4 +1,4 @@
-export const fixedWeatherApi = [{
+export const fixedApi = [{
     "current": {
         "clouds": "20",
         "dew_point": "9.52",
@@ -6,6 +6,10 @@ export const fixedWeatherApi = [{
         "feels_like": "11.55",
         "humidity": "67",
         "pressure": "1011",
+        "weather": {
+            "main": "cloud",
+            "description": "cloudy weather"
+        },
         "sunrise": "1593400890",
         "sunset": "1593461170",
         "temp": "15.62",
