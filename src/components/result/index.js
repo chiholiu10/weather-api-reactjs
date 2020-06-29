@@ -1,14 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
 
-const Result = ({ city, data }) => {
+export const Result = ({ data, city }) => {
     if(data === undefined) {
         return (
-            <div></div>
+            <div data-testid="empty-array"></div>
         )
     } else {
         return (
-            <div>
+            <div data-testid="weather-array">
                 <div className="city-name">{city}</div>
                 <div className="weather-info">
                     <div className="temperature">{data.temp}</div>
@@ -23,7 +23,7 @@ const Result = ({ city, data }) => {
 
 const mapStateToProps = (state) => {
     return {
-        city: state.weatherData.city,
+        city: state.weatherData.city || undefined,
         data: state.weatherData.weatherInfo.current || undefined
     }
 }

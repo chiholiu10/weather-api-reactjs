@@ -10,7 +10,6 @@ describe('actions', () => {
     });
 })
 
-
 describe('actions', () => {
     it('should create an action and check if action named passWeatherData passed weather data', () => {
         const weatherApi = fixedApi
