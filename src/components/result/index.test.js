@@ -10,7 +10,6 @@ import {
     emptyWeatherApi,
 } from '../../mock/emptyApi';
 
-console.log(fixedWeatherApi)
 test("It should check if parameter named data is not undefined in Result component", () => {
     const emptyWeatherParameter = emptyWeatherApi.length; // undefined
     render(
