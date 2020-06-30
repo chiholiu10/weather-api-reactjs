@@ -1,4 +1,4 @@
-export const fixedApi = [{
+export const fixedWaetherApi = [{
     "current": {
         "clouds": "20",
         "dew_point": "9.52",
