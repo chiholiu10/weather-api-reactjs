@@ -1,6 +1,6 @@
 import React from "react";
-import Search from '../search/index';
-import Result from '../result/index';
+import Search from '../Search/index';
+import Result from '../Result/index';
 
 export const AppComponent = () => (
     <div>
