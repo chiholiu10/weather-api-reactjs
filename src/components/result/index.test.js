@@ -11,7 +11,7 @@ import {
 } from '../../mock/emptyApi';
 
 console.log(fixedWeatherApi)
-test("It should check if there if parameter named data is not undefined in Result component", () => {
+test("It should check if parameter named data is not undefined in Result component", () => {
     const emptyWeatherParameter = emptyWeatherApi.length; // undefined
     render(
         <Provider store={store}>
@@ -22,7 +22,7 @@ test("It should check if there if parameter named data is not undefined in Resul
     expect(checkWeatherData).toHaveLength(1);
 });
 
-test("It should check if there if parameter named data is defined in Result component", () => {
+test("It should check if parameter named data is defined in Result component", () => {
     render(
         <Provider store={store}>
             <Result city data={fixedWeatherApi}/>
