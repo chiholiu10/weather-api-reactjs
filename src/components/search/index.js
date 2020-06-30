@@ -67,7 +67,6 @@ const Search = ({ data }) => {
     }
 
     return (
-
         <div>
             <form onSubmit={e => {
                 e.preventDefault()
