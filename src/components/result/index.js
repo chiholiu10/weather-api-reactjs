@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 export const Result = ({ data, city }) => {
-    if(data === undefined) {
+    if(data == undefined) {
         return (
             <div data-testid="empty-array"></div>
         )
@@ -12,9 +12,12 @@ export const Result = ({ data, city }) => {
                 <div className="city-name">{city}</div>
                 <div className="weather-info">
                     <div className="temperature">{data.temp}</div>
-                    <div>{data.weather[0].main}</div>
-                    <div>{data.weather[0].description}</div>
-                    <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={city + ' weather status'}/>
+                    {data.weather == undefined ? "" : <div>
+                        <div>{data.weather[0].main}</div>
+                        <div>{data.weather[0].description}</div>
+                        <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={city + ' weather status'}/>
+                    </div>
+                    }
                 </div>
             </div>
         )
