@@ -1,2 +1,2 @@
-export const emptyWeatherApi = []
-export const emptyCityApi = []
+export const emptyWeatherApi = {}
+export const emptyCityApi = {}
