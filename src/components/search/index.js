@@ -9,7 +9,7 @@ import {
     clearArray
 } from '../../actions/index';
 
-const Search = ({ data }) => {
+export const Search = ({ data }) => {
     const dispatch = useDispatch();
     const apiKey = 'e8780420f8d0a3cf13e80ff3ad27cf96';
     const defaultPlace = "Amsterdam";
@@ -67,7 +67,6 @@ const Search = ({ data }) => {
     }
 
     return (
-
         <div>
             <form onSubmit={e => {
                 e.preventDefault()
@@ -84,7 +83,7 @@ const Search = ({ data }) => {
                 input.value = "";
             }}
             >
-                <input ref={node => (input = node)} placeholder="Search location weather"/>
+                <input ref={node => (input = node)} aria-label="search-input" placeholder="Search location weather"/>
                 <button type="submit">Enter</button>
             </form>
         </div>
