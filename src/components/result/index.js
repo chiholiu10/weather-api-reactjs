@@ -8,14 +8,14 @@ export const Result = ({ data, city }) => {
         )
     } else {
         return (
-            <div data-testid="weather-array">
+            <div data-testid="weather-array" className="weather-result-container">
                 <div className="city-name">{city}</div>
                 <div className="weather-info">
-                    <div className="temperature">{data.temp}</div>
+                    <div className="temperature">{Math.floor(data.temp)} °C</div>
                     {data.weather == undefined ? "" : <div>
-                        <div>{data.weather[0].main}</div>
-                        <div>{data.weather[0].description}</div>
-                        <img src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={city + ' weather status'}/>
+                        <img className="one-column" src={`http://openweathermap.org/img/w/${data.weather[0].icon}.png`} alt={city + ' weather status'}/>
+                        <div className="two-columns">{data.weather[0].main}</div>
+                        <div className="two-columns">{data.weather[0].description}</div>
                     </div>
                     }
                 </div>
