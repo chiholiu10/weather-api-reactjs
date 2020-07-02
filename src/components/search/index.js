@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import Geocode from "react-geocode";
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { 
     cityName, 
     passWeatherData,
     clearArray
-} from '../../actions/index';
+} from "../../actions/index";
 
 export const Search = ({ data }) => {
     const dispatch = useDispatch();
-    const apiKey = 'e8780420f8d0a3cf13e80ff3ad27cf96';
+    const apiKey = "e8780420f8d0a3cf13e80ff3ad27cf96";
     const defaultPlace = "Amsterdam";
 
     let input;
@@ -34,8 +34,8 @@ export const Search = ({ data }) => {
     const passLocation = (placeName) => {
         Geocode.fromAddress(placeName).then(
             response => {
-                const { lat, lng } = response.results[0].geometry.location;
-                const city = response.results[0].formatted_address;
+                let { lat, lng } = response.results[0].geometry.location;
+                let city = response.results[0].formatted_address;
                 dispatch(cityName(city))
                 passCoordination(lat, lng);
             },
@@ -46,8 +46,8 @@ export const Search = ({ data }) => {
     }
 
     const passCoordination = (latitude, longtitude) => {
-        const lat = latitude;
-        const lon = longtitude;
+        let lat = latitude;
+        let lon = longtitude;
         searchLocation(lat, lon);
     }
 
@@ -62,29 +62,34 @@ export const Search = ({ data }) => {
                 dispatch(passWeatherData(response.data));
             })
             .catch(error => {
-                console.log('hello')
+                console.log(error)
             })
     }
 
     return (
         <div>
-            <form onSubmit={e => {
+            <form 
+                className="form" 
+                onSubmit={e => {
                 e.preventDefault()
-                if(!input.value.trim()) {
-                    return;
-                }
+                if(!input.value.trim()) return;
 
                 getSearchValue(input.value);
 
-                if(data !== undefined) {
-                    dispatch(clearArray());
-                }
+                if(data !== undefined) dispatch(clearArray());
                 
                 input.value = "";
             }}
             >
-                <input ref={node => (input = node)} aria-label="search-input" placeholder="Search location weather"/>
-                <button type="submit">Enter</button>
+                <input 
+                    className="search-input"
+                    ref={node => (input = node)} 
+                    aria-label="search-input" 
+                    placeholder="Search location weather"
+                />
+                <button className="search-button" type="submit">
+                    <i className="fa fa-search"></i>
+                </button>
             </form>
         </div>
     )
