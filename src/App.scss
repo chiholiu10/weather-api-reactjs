@@ -1,13 +1,70 @@
+$white: white;
+
 body, 
 html {
     overflow-x: hidden;
     margin: 0;
-    padding: 0;
+    padding: 10px;
     width: 100%;
-    background-color: black;
-    color: white;
-    .city-name {
-        text-align: center;
-        font-size: 40px;
+    color: $white;
+    font-family: 'Roboto', sans-serif;
+    .app-container {
+        padding: 20px;
+        background-image: url('./images/cloud-background.jpg');
+        background-size: cover;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: absolute;
+        .form {
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 200px;
+            display: flex;
+            position: relative;
+            .search {
+                &-input {
+                    width: 100%;
+                    padding: 10px 20px 10px 10px;
+                    border: none;
+                }
+                &-button {
+                    position: absolute;
+                    right: 0;
+                    width: 20%;
+                    background-color: transparent;
+                    border: none;
+                    height: 100%;
+                    &:focus {
+                        outline: 0;
+                    }
+                    .fa-search {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+        .city-name {
+            text-align: center;
+            font-size: 30px;
+            padding: 30px 20px 20px;
+        }
+        .temperature {
+            font-size: 40px;
+        }
+        .one-column {
+            display: block;
+            padding-bottom: 20px;
+        }
+        .two-columns {
+            display: inline-block;
+            width: 50%;
+        }
+        textarea:focus, 
+        input:focus {
+            outline: none;
+        }
     }
 }
