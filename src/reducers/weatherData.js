@@ -13,13 +13,14 @@ export const weatherData = (state = initialState, action) => {
                 weatherInfo: []
             }
         }
+        
         case types.PASS_WEATHER_DATA: {
             return {
                 ...state,
                 weatherInfo: action.data
             }
         }
-        
+
         // also capturing the city name and output that in the app gives the user the useful information
         case types.CITY_NAME: {
             return {
