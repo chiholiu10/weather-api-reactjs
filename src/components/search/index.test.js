@@ -3,7 +3,6 @@ import { render, fireEvent } from "@testing-library/react";
 import { Search } from './index';
 import { Provider } from "react-redux";
 import { store } from "../../Store";
-import { screen } from "@testing-library/dom";
 
 const setup = () => {
     const utils = render(
