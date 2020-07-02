@@ -1,6 +1,6 @@
 import React from "react"
 import { render, fireEvent } from "@testing-library/react";
-import { Search } from './index';
+import { Search } from "./index";
 import { Provider } from "react-redux";
 import { store } from "../../Store";
 

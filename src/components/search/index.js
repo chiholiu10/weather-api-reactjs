@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
 import Geocode from "react-geocode";
-import axios from 'axios';
-import { useDispatch } from 'react-redux';
-import { connect } from 'react-redux';
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { connect } from "react-redux";
 import { 
     cityName, 
     passWeatherData,
     clearArray
-} from '../../actions/index';
+} from "../../actions/index";
 
 export const Search = ({ data }) => {
     const dispatch = useDispatch();
-    const apiKey = 'e8780420f8d0a3cf13e80ff3ad27cf96';
+    const apiKey = "e8780420f8d0a3cf13e80ff3ad27cf96";
     const defaultPlace = "Amsterdam";
 
     let input;
@@ -87,7 +87,9 @@ export const Search = ({ data }) => {
                     aria-label="search-input" 
                     placeholder="Search location weather"
                 />
-                <button className="search-button" type="submit"><i className="fa fa-search"></i></button>
+                <button className="search-button" type="submit">
+                    <i className="fa fa-search"></i>
+                </button>
             </form>
         </div>
     )

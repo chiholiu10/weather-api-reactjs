@@ -1,11 +1,11 @@
-import React from "react"
+import React from "react";
 import { render } from "@testing-library/react";
-import { Result } from './index';
+import { Result } from "./index";
 import { Provider } from "react-redux";
 import { store } from "../../Store";
 import { screen } from "@testing-library/dom";
-import { fixedWeatherApi } from '../../mock/mockApi';
-import { emptyWeatherApi } from '../../mock/emptyApi';
+import { fixedWeatherApi } from "../../mock/mockApi";
+import { emptyWeatherApi } from "../../mock/emptyApi";
 
 test("It should check if parameter named data is not undefined in Result component", () => {
     const emptyWeatherParameter = emptyWeatherApi.length; 
