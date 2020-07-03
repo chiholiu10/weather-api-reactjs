@@ -3,11 +3,11 @@
 Create a weather widget for use in the webbrowser that provides us with a weather forecast.
 
 Tutorial on how to run the app after cloning the repository
-# npm i
-# npm run start
+-npm i
+-pm run start
 
 Then open a new terminal and run the following command line to run the test
-# npm run test
+-npm run test
 
 We recommend using the free DarkSky [weather API](https://darksky.net/dev).
 You can register a free account which will allow for up to a thousand requests per day.
