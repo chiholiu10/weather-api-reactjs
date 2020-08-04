@@ -1,3 +1,3 @@
 export const fixedCityName = [{
-    "city": "Amsterdam"
-}]
+	"city": "Amsterdam"
+}];
