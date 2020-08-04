@@ -3,7 +3,7 @@ import weatherData from './reducers';
 import thunk from 'redux-thunk';
 
 export const store = createStore(
-    weatherData,
-    applyMiddleware(thunk)
+	weatherData,
+	applyMiddleware(thunk)
 );
 

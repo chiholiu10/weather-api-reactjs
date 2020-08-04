@@ -1,1 +1,1 @@
-export const emptyWeatherApi = {}
+export const emptyWeatherApi = {};
